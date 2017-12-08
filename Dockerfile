@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y \
     git \
     libicu-dev \
     zlib1g-dev
-#RUN apt-get install -y \
-#    language-pack-it_CH.utf8
 
 RUN dpkg-reconfigure locales \
 	&& locale-gen \
@@ -27,9 +25,6 @@ ENV LANGUAGE en_US.UTF-8
 
 RUN docker-php-ext-install -j$(nproc) iconv mcrypt
 RUN docker-php-ext-install -j$(nproc) zip
-
-#RUN docker-php-ext-install -j$(nproc) curl hash json reflection spl
-#RUN docker-php-ext-install -j$(nproc) hash json reflection spl
 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \

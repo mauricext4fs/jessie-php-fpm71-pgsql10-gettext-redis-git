@@ -37,6 +37,7 @@ port 9000
 ## Description
 
 This docker expect the php files to be mounted / copy  directly in /var/www
+
 Using run will automatically run composer install and then start php-fpm on port 9000.
 This is mean to be used in tandem with a docker container running either nginx or apache.
 
